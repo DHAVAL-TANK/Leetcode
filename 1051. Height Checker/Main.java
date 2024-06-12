@@ -34,7 +34,7 @@
 import java.util.Arrays;
 
 public class Main{
-    public static void main(Strings[] args){
+    public static void main(String[] args){
         int[] heights = {1,1,4,2,1,3};
            System.out.println(heightChecker(heights));
      }
