@@ -18,15 +18,22 @@ def subsetSumToK(n, k, arr):
                 if arr[index] <= target:
                     take = dp[index-1][target-arr[index]]
             dp[index][target]= take or notTake
-
+    print(dp)
     return dp[n-1][k]
 
-def subsetCountToK(n, k, arr):
-    # Initialize a DP array where dp[i][target] will store the count of subsets up to index i that sum to target
+
+from typing import List
+
+def findWays(arr: List[int], k: int) -> int:
+    n=len(arr)
+     # Initialize a DP array where dp[i][target] will store the count of subsets up to index i that sum to target
     dp = [[0 for _ in range(k + 1)] for _ in range(n)]
+    zeros=0
     
     # Base case: There's one way to achieve target sum of 0 (by choosing no elements)
     for i in range(n):
+        if arr[i] == 0:
+            zeros+=1
         dp[i][0] = 1
     
     # Initialize first row (if arr[0] <= k, then we have one subset which includes only arr[0])
@@ -46,8 +53,6 @@ def subsetCountToK(n, k, arr):
             
             # Sum both options
             dp[index][target] = notTake + take
-        print(dp[index])
-        print()
 
     # The result is the count of subsets that sum to k using all elements
     return dp[n - 1][k]
@@ -78,13 +83,15 @@ def subsetCountToK(n, k, arr):
 
 def driver():
     # Fixed input
-    n = 5
-    arr = [3, 4, 1, 2, 5]
-    k = 6
+    n = 3
+    arr = [12 ,14 ,3, 18, 2] 
+    k = 13
 
     # Call the subsetSumToK function
     result = subsetSumToK(n, k, arr)
-    count = subsetCountToK(n,k,arr)
+    count = findWays(arr,k)
+
+    print(count)
 
     # Print the result
     if result:
