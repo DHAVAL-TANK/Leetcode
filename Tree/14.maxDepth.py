@@ -1,3 +1,6 @@
+from Tree.Nodes import TreeNode
+
+
 class Solution:
     def maxDepth(self, root: Optional[TreeNode]) -> int:
 

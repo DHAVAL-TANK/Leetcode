@@ -4,8 +4,9 @@
 #         self.val = val
 #         self.left = left
 #         self.right = right
+from collections import deque
 import queue
-from typing import Optional
+from typing import List, Optional
 
 from Tree.Nodes import TreeNode
 class Solution:
