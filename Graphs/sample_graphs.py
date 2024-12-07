@@ -12,3 +12,14 @@ graph = [
     [6, 7],          # Neighbors of vertex 10
     [8]              # Neighbors of vertex 11
 ]
+
+graph_matrix = [
+    [1, 1, 0, 0, 0], 
+    [1, 1, 1, 0, 0], 
+    [0, 1, 1, 0, 0], 
+    [0, 0, 0, 1, 0],  
+    [0, 0, 0, 0, 1]  
+]
+
+
+
